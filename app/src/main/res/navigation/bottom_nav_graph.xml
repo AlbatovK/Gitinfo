@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/profile_info_fragment">
+
+    <fragment
+        android:id="@+id/profile_info_fragment"
+        android:label="Profile"
+        android:name="com.albatros.gitinfo.presentation.info.profile.ProfileInfoFragment"
+        tools:layout="@layout/fragment_login" >
+
+        <argument
+            android:name="arg"
+            app:argType="com.albatros.gitinfo.domain.model.GithubUser" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/repositories_fragment"
+        android:label="Repositories"
+        android:name="com.albatros.gitinfo.presentation.info.repos.RepositoriesFragment"
+        tools:layout="@layout/activity_main" />
+
+</navigation>

@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profile_info_fragment"
+        android:icon="@android:color/darker_gray"
+        android:title="never" />
+
+    <item
+        android:id="@+id/repositories_fragment"
+        android:icon="@android:color/holo_red_dark"
+        android:title="never" />
+
+</menu>
