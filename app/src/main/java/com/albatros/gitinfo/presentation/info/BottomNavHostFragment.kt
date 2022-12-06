@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
@@ -36,7 +37,7 @@ class BottomNavHostFragment : Fragment() {
 
         val appBarConfiguration = AppBarConfiguration.Builder(
             R.id.profile_info_fragment,
-            R.id.repositories_fragment
+            R.id.repositories_fragment,
         ).build()
 
         NavigationUI.setupWithNavController(binding.navView, navController)
@@ -47,5 +48,12 @@ class BottomNavHostFragment : Fragment() {
         )
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        requireActivity().onBackPressedDispatcher.addCallback {
+            requireActivity().finish()
+        }
     }
 }

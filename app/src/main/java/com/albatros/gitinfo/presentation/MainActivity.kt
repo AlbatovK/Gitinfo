@@ -16,10 +16,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
-    fun setAppBarConfiguration(config: AppBarConfiguration) {
-        appBarConfiguration = config
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -27,9 +23,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
+
         val appBarConfiguration = AppBarConfiguration.Builder(
             R.id.login_fragment,
-            R.id.bottom_nav_host_fragment
+            R.id.bottom_nav_host_fragment,
         ).build()
 
         setupActionBarWithNavController(navController, appBarConfiguration)
