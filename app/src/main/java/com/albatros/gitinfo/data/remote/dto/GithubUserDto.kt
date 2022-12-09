@@ -40,7 +40,7 @@ data class GithubUserDto(
     @SerializedName("location")
     val location: String?,
     @SerializedName("login")
-    val login: String?,
+    val login: String,
     @SerializedName("name")
     val name: String?,
     @SerializedName("node_id")

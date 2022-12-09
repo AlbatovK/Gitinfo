@@ -31,9 +31,6 @@ class BottomNavHostFragment : Fragment() {
 
         val navHostFragment: View = binding.container.findViewById(R.id.bottom_nav_host_fragment)
         val navController = Navigation.findNavController(navHostFragment)
-        navController.setGraph(
-            R.navigation.bottom_nav_graph, args.toBundle()
-        )
 
         val appBarConfiguration = AppBarConfiguration.Builder(
             R.id.profile_info_fragment,
@@ -45,6 +42,10 @@ class BottomNavHostFragment : Fragment() {
             activity as MainActivity,
             navController,
             appBarConfiguration
+        )
+
+        navController.setGraph(
+            R.navigation.bottom_nav_graph, args.toBundle()
         )
 
         return binding.root

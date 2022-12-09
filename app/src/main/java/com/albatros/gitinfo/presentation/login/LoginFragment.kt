@@ -48,7 +48,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.events.collect {
                     when (it) {
                         is LoginViewModel.LoginEvents.InvalidLogin -> {

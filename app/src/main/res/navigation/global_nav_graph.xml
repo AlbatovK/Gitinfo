@@ -2,11 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/global_nav_graph"
     app:startDestination="@id/login_fragment">
 
     <fragment
         android:id="@+id/login_fragment"
+        android:label=""
         android:name="com.albatros.gitinfo.presentation.login.LoginFragment"
         tools:layout="@layout/fragment_login">
 
@@ -18,12 +19,29 @@
 
     <fragment
         android:id="@+id/bottom_nav_host_fragment"
+        android:label=""
         android:name="com.albatros.gitinfo.presentation.info.BottomNavHostFragment"
         tools:layout="@layout/fragment_host">
+
+        <action
+            android:id="@+id/action_BottomNavHostFragment_to_RepoDetailsFragment"
+            app:destination="@id/repo_details_fragment" />
 
         <argument
             android:name="arg"
             app:argType="com.albatros.gitinfo.domain.model.GithubUser" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/repo_details_fragment"
+        android:label=""
+        android:name="com.albatros.gitinfo.presentation.repo_detail.RepoDetailsFragment"
+        tools:layout="@layout/fragment_host">
+
+        <argument
+            android:name="arg"
+            app:argType="com.albatros.gitinfo.domain.model.GithubRepoDetails" />
 
     </fragment>
 
